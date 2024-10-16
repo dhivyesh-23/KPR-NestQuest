@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #EAECEE; /* Off-white background */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #EAECEE; /* Voga Dark Green */
+            padding: 10px 50px;
+            color:  #3E6E4E;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color:  #3E6E4E;
+            text-decoration: none;
+        }
+        .hero-section {
+            background: url('Home_bg2.jpeg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:  #3E6E4E;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-size: 3em;
+            color: #D4E6E7; /* Light green for contrast */
+        }
+        .search-bar-container {
+            margin-top: 20px;
+        }
+        .search-bar {
+            width: 50%;
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1em;
+            background-color: #B7D7B3; /* Soft green */
+            color: #3E6E4E; /* Voga Dark Green text */
+        }
+        .features-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .feature {
+            display: inline-block;
+            width: 30%;
+            padding: 20px;
+            background-color: #4A8B4B; /* Medium green */
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        /* Overlay styles */
+        .overlay-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            max-width: 500px;
+            
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: #333;
+            font-weight: 600;
+        }
+        .nav-tabs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            list-style-type: none;
+            font-size: 1.1rem;
+        }
+        .nav-tabs a {
+            text-decoration: none;
+            color: #3E6E4E;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .nav-tabs a.active, .nav-tabs a:hover {
+            background-color: #e9f5ff;
+            font-weight: 600;
+        }
+        .input-group {
+            margin-bottom: 25px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #444;
+            font-size: 1rem;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            font-size: 1rem;
+            
+            border-radius: 8px;
+            transition: border-color 0.3s;
+            border: 1px solid #3E6E4E;
+        }
+        .input-group input:focus {
+            border-color: #007aff;
+            outline: none;
+        }
+        .password-rules {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .checkbox-group {
+            margin-bottom: 30px;
+        }
+
+        .checkbox-group input {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            background-color: #3E6E4E; /* Voga Dark Green */
+            color: #fff;
+        }
+        .submit-btn:hover {
+          background-color: #2E5B3D;
+        }
+        .hidden-form {
+            display: none;
+        }
+
+        .active-form {
+            display: block;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f44;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h2>Real Estate</h2>
+    </div>
+    <nav>
+        <div class="nav-links">
+            <a href="#">Buy properties</a>
+            <a href="#">About</a>
+            <a href="#">Contact us</a>
+            <a href="#" id="login-btn">Login/Sign up</a>
+        </div>
+    </nav>
+</header>
+
+<div class="hero-section">
+    
+</div>
+
+<div class="features-section">
+    <h2>Get home recommendations</h2>
+    <div class="feature">
+        <p>Recommended homes based on your monthly budget</p>
+    </div>
+    <div class="feature">
+        <p>Recommended homes based on your preferred location</p>
+    </div>
+</div>
+ <!-- Overlay Form -->
+ <div class="overlay-container" id="overlay-container">
+  <div class="container">
+      <span class="close-btn" id="close-btn">&times;</span>
+      <h2 style="margin-bottom: 15px;">Welcome to Zillow</h2>
+      <ul class="nav-tabs">
+          <li><a href="#" id="signin-tab" class="active">Sign in</a></li>
+          <li><a href="#" id="newaccount-tab">New account</a></li>
+      </ul>
+
+      <!-- Sign In Form -->
+      <form id="signin-form" class="active-form">
+          <div class="input-group">
+              <label for="signin-email">Email</label>
+              <input type="email" id="signin-email" name="email" placeholder="Enter email" required>
+          </div>
+          <div class="input-group">
+              <label for="signin-password">Password</label>
+              <input type="password" id="signin-password" name="password" placeholder="Enter password" required>
+          </div>
+          <button type="submit" class="submit-btn">Sign In</button>
+      </form>
+
+      <!-- New Account Form -->
+      <!-- New Account Form -->
+<form id="newaccount-form" class="hidden-form">
+  <div class="input-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+  </div>
+  <div class="input-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Choose a username" required>
+  </div>
+  <div class="input-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+  </div>
+  <div class="input-group">
+      <label for="new-email">Email</label>
+      <input type="email" id="new-email" name="email" placeholder="Enter email" required>
+  </div>
+  <div class="input-group">
+      <label for="new-password">Password</label>
+      <input type="password" id="new-password" name="password" placeholder="Create password" required>
+      <ul class="password-rules">
+          <li>At least 8 characters</li>
+          <li>Mix of letters and numbers</li>
+          <li>At least 1 special character</li>
+          <li>At least 1 lowercase and 1 uppercase letter</li>
+      </ul>
+  </div>
+  
+  <button type="submit" class="submit-btn" style="margin-top: -10px;">Create Account</button>
+</form>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const signinTab = document.getElementById('signin-tab');
+        const newAccountTab = document.getElementById('newaccount-tab');
+        const signinForm = document.getElementById('signin-form');
+        const newAccountForm = document.getElementById('newaccount-form');
+        const overlay = document.getElementById('overlay-container');
+        const closeBtn = document.getElementById('close-btn');
+        const loginBtn = document.getElementById('login-btn');
+      // Show the overlay when Login/Sign up is clicked
+      loginBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            overlay.style.display = 'flex';
+        });
+      // Switch to Sign In form
+      signinTab.addEventListener('click', function() {
+          signinForm.classList.add('active-form');
+          signinForm.classList.remove('hidden-form');
+          newAccountForm.classList.add('hidden-form');
+          newAccountForm.classList.remove('active-form');
+          
+          signinTab.classList.add('active');
+          newAccountTab.classList.remove('active');
+      });
+
+      // Switch to New Account form
+      newAccountTab.addEventListener('click', function() {
+          newAccountForm.classList.add('active-form');
+          newAccountForm.classList.remove('hidden-form');
+          signinForm.classList.add('hidden-form');
+          signinForm.classList.remove('active-form');
+          
+          newAccountTab.classList.add('active');
+          signinTab.classList.remove('active');
+      });
+
+      // Close the overlay
+      closeBtn.addEventListener('click', function() {
+          overlay.style.display = 'none';
+      });
+  });
+</script>
+</body>
+</html>.
