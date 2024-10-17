@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #EAECEE;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #EAECEE;
+            padding: 10px 50px;
+            color: #3E6E4E;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #3E6E4E;
+            text-decoration: none;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        .action-buttons a {
+            padding: 10px 20px;
+            background-color: #4A8B4B;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .action-buttons a:hover {
+            background-color: #3E6E4E;
+        }
+        .hero-section {
+            background: url('Home_bg2.jpeg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #3E6E4E;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-size: 3em;
+            color: #D4E6E7;
+        }
+        .features-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .feature {
+            display: inline-block;
+            width: 30%;
+            padding: 20px;
+            background-color: #4A8B4B;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h2>Real Estate</h2>
+    </div>
+    <nav>
+        <div class="nav-links">
+            <a href="#">Buy properties</a>
+            <a href="#">About</a>
+            <a href="#">Contact us</a>
+        </div>
+        <div class="action-buttons">
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    </nav>
+</header>
+
+<div class="hero-section">
+    <h1>Welcome to Your Next Dream Home</h1>
+</div>
+
+<div class="features-section">
+    <h2>Get home recommendations</h2>
+    <div class="feature">
+        <p>Recommended homes based on your monthly budget</p>
+    </div>
+    <div class="feature">
+        <p>Recommended homes based on your preferred location</p>
+    </div>
+</div>
+
+</body>
+</html>

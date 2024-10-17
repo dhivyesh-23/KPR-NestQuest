@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #F5F5F5;
+}
+
+.navbar {
+  background-color: #0A2540;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.logo span {
+  color: #FFCC00;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.menu ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.menu ul li {
+  margin-left: 20px;
+}
+
+.menu ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.menu ul li a:hover {
+  color: #FFCC00;
+}
+
+.launch-site button {
+  background-color: #0056b3;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-section {
+  background-color: #0A2540;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+}
+
+.for-sale-btn {
+  background-color: #FF5733;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.property-search {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.property-search form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.property-search select, .property-search button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.property-search button {
+  background-color: #FF5733;
+  color: white;
+  cursor: pointer;
+}
+.image-content img {
+  max-width: 300px; 
+  height: auto;      
+  border-radius: 10px;
+}
+/* Style the entire header */
+header {
+  background-color: #004080; /* Uniform color for the header */
+  padding: 20px 0; /* Add some padding */
+}
+
+/* Style for the navigation bar */
+.navbar {
+  display: flex;
+  justify-content: center; /* Center the links horizontally */
+  align-items: center; /* Align items vertically */
+}
+
+/* Style for the list of navigation links */
+.nav-links {
+  list-style: none; /* Remove bullets from the list */
+  display: flex;
+  gap: 30px; /* Space between links */
+}
+
+/* Style for individual links */
+.nav-links li a {
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Make link text white */
+  font-size: 18px; /* Adjust font size */
+  font-weight: bold;
+}
+
+/* Optional: Change color when hovering over links */
+.nav-links li a:hover {
+  color: #ffcc00; /* Change this to any hover color you prefer */
+}
+
