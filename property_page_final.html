@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website - Voga Green Theme</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef4f2; /* Soft greenish background */
+        }
+        header {
+            background-color: #2c5d50; /* Voga Dark Green */
+            padding: 10px;
+        }
+        header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header nav ul li {
+            margin-right: 20px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Search bar styles */
+        .search-bar {
+            background-color: #2c5d50;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .search-bar input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            border: 2px solid #8dbf87; /* Lighter Voga Green */
+            border-radius: 4px 0 0 4px;
+        }
+        .search-bar button {
+            padding: 10px;
+            background-color: #8dbf87; /* Voga Green */
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+            font-weight: bold;
+        }
+        .search-bar button:hover {
+            background-color: #2c5d50; /* Darker Green on hover */
+        }
+
+        /* Container for content */
+        .container {
+            display: flex;
+            margin: 20px;
+        }
+        .filter-sidebar select {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #f4f4f4;
+          color: #333;
+          font-size: 14px;
+        }
+
+
+        /* Sidebar styling */
+        .filter-sidebar {
+            width: 20%;
+            background-color: white;
+            padding: 20px;
+            margin-right: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .filter-sidebar h3 {
+            margin-top: 0;
+            color: #2c5d50; /* Voga Green */
+        }
+        .filter-sidebar label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .filter-sidebar input, .filter-sidebar select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #8dbf87; /* Lighter Voga Green borders */
+            border-radius: 4px;
+        }
+        .filter-sidebar .price-range {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .filter-sidebar .price-range input[type="range"] {
+            width: 80%;
+            background-color: #2c5d50;
+        }
+        
+        /* Filter Button */
+        .filter-btn {
+            display: block;
+            background-color: #8dbf87; /* Voga Green */
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .filter-btn:hover {
+            background-color: #2c5d50; /* Darker green hover */
+        }
+
+        /* Property list styling */
+        .properties {
+            width: 75%;
+        }
+        .property-card {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .property-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .property-card h3 {
+            color: #2c5d50; /* Voga Green */
+        }
+        .property-card .price {
+            color: #8dbf87; /* Greenish accent */
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .property-card .details-btn {
+            background-color: #8dbf87; /* Button in Voga Green */
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .property-card .details-btn:hover {
+            background-color: #2c5d50; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="1.html">Home</a></li>
+                <li><a href="2.html">Properties</a></li>
+                <li><a href="3.html">About</a></li>
+                <li><a href="4.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Search Bar Section -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search by location or property type...">
+        <button>Search</button>
+    </div>
+
+    <div class="container">
+        <!-- Filter Sidebar -->
+        <aside class="filter-sidebar">
+            <h3>Filters</h3>
+            
+            <!-- Location Filter -->
+            <!-- Location Filter with Dropdown -->
+            <label for="location">Location</label>
+            <select id="location">
+                <option value="any">Select Location</option>
+                <option value="new-york">New York</option>
+                <option value="los-angeles">Los Angeles</option>
+                <option value="miami">Miami</option>
+                <option value="chicago">Chicago</option>
+                <option value="san-francisco">San Francisco</option>
+            </select>
+
+
+            <!-- Property Type Filter -->
+            <label for="property-type">Property Type</label>
+            <select id="property-type">
+                <option value="all">All</option>
+                <option value="apartment">Apartment</option>
+                <option value="house">House</option>
+                <option value="villa">Villa</option>
+            </select>
+
+            <!-- Budget Slider Filter -->
+            <label for="budget">Budget</label>
+            <div class="price-range">
+                <input type="range" id="price-slider" min="10000" max="500000" step="10000" value="10000">
+                <span id="price-value">$10,000</span>
+            </div>
+
+            <!-- Brands (Optional, can customize as needed) -->
+            <label for="brands">Brands</label>
+            <select id="brands">
+                <option value="any">Any</option>
+                <option value="brand1">Brand 1</option>
+                <option value="brand2">Brand 2</option>
+            </select>
+
+            <!-- Filter Button -->
+            <button class="filter-btn">Apply Filters</button>
+        </aside>
+
+        <!-- Property Listings -->
+        <section class="properties">
+            <div class="property-card">
+                <img src="p1.jpg" alt="Property 1">
+                <h3>Design Apartment Ocean View</h3>
+                <p class="price">$1,35,328</p>
+                <p class="details">2 Bed, 1 Bath, 1749 Sq Ft</p>
+                <a href="details1.html"><button class="details-btn">Details</button></a>
+            </div>
+            <div class="property-card">
+                <img src="p2.jpg" alt="Property 2">
+                <h3>Ample Apartment</h3>
+                <p class="price">$1,15,845</p>
+                <p class="details">2 Bed, 1 Bath, 2300 Sq Ft</p>
+                <a href="details2.html"><button class="details-btn">Details</button></a>
+            </div>
+            <div class="property-card">
+                <img src="p3.jpg" alt="Property 3">
+                <h3>New Apartment</h3>
+                <p class="price">$1,22,832</p>
+                <p class="details">3 Bed, 1 Bath, 2450 Sq Ft</p>
+                <a href="details3.html"><button class="details-btn">Details</button></a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Update price value dynamically as the user moves the range slider
+        const priceSlider = document.getElementById('price-slider');
+        const priceValue = document.getElementById('price-value');
+
+        priceSlider.addEventListener('input', function() {
+            priceValue.textContent = `$${parseInt(priceSlider.value).toLocaleString()}`;
+        });
+    </script>
+    
+</body>
+</html>
