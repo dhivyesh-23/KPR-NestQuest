@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #35495e;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Search bar section */
+        .search-bar {
+            background-color: #35495e;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .search-bar input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #999;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: #42b983;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Property list styles */
+        .properties {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 30px;
+            gap: 20px;
+        }
+
+        /* Individual property card styling */
+        .property-card {
+            background-color: white;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Image in property card */
+        .property-card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        /* Property info */
+        .property-info {
+            padding: 20px;
+        }
+
+        .property-info h3 {
+            color: #35495e;
+            margin: 0;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .property-info .price {
+            color: #42b983;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .property-info p {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        .action-buttons a {
+            width: 48%;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .edit-btn, .details-btn {
+            background-color: #42b983;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .edit-btn:hover, .details-btn:hover {
+            background-color: #35495e;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Properties</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Search Bar -->
+<div class="search-bar">
+    <input type="text" placeholder="Search by location or property type...">
+    <button>Search</button>
+</div>
+<div class="properties">
+    {% for property in properties %}
+        <div class="property-card">
+            <img src="{{ url_for('static', filename='images/' + property['image']) }}" alt="{{ property['name'] }}">
+            <h3>{{ property['name'] }}</h3>
+            <p class="price">${{ property['price_per_cent'] }}</p>
+            <p>{{ property['area'] }} Sq Ft, {{ property['no_of_bedrooms'] }} Bed, {{ property['amenities'] }}</p>
+
+            <div class="action-buttons">
+                <a href="{{ url_for('edit_property', property_id=property['_id']) }}"><button class="edit-btn">Edit</button></a>
+              
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+</div>
+
+</body>
+</html>

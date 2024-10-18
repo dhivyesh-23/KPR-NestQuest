@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+        h2 {
+            color: #14544e;
+            margin-bottom: 30px; /* Added margin for spacing */
+        }
+        .container {
+            display: grid; /* Use CSS Grid for layout */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive layout */
+            gap: 30px; /* Space between boxes */
+            justify-content: center; /* Center the grid items */
+        }
+        .box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s; /* Smooth transform effect */
+        }
+        .box:hover {
+            transform: scale(1.05); /* Scale up on hover for a neat effect */
+        }
+        .box img {
+            width: 100%; /* Make the GIF responsive */
+            height: auto; /* Keep aspect ratio */
+            margin-bottom: 15px;
+            border-radius: 10px; /* Match box style */
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #14544e;
+            background-color: #f6f6e9;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 10px; /* Space above button */
+        }
+        .button:hover {
+            background-color: #e0e0e0; /* Slight change on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Choose a Property Type</h2>
+
+    <div class="container">
+        <!-- Box for Villa -->
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/villasimage.gif') }}" alt="Villa GIF">
+            <a href="/add_villa" class="button">Villa</a>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/landimage.jpg') }}" alt="Land GIF">
+            <a href="/add_land" class="button">Land</a>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/Apartment icons.gif') }}" alt="Apartment GIF">
+            <a href="/add_apartment" class="button">Apartment</a>
+        </div>
+        
+    </div>
+
+</body>
+</html>
+
