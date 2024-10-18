@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f3ed; /* Match the light background from your image */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #23403F;
+            margin-top: 50px;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .image-container {
+            display: inline-block;
+            position: relative;
+        }
+        img {
+            width: 800px; /* Adjust the size based on your image dimensions */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>What do you want to do today?</h1>
+    <div class="image-container">
+        <img src="actions.png" usemap="#propertymap" alt="Property Options">
+        <!-- Adjust the image source with your actual image file path -->
+        <map name="propertymap">
+            <!-- Coordinates for the "Add Properties" area -->
+            <area shape="rect" coords="50,50,250,300" href="add_properties.html" alt="Add Properties">
+            <!-- Coordinates for the "Edit Properties" area -->
+            <area shape="rect" coords="270,50,470,300" href="edit_properties.html" alt="Edit Properties">
+            <!-- Coordinates for the "Delete Properties" area -->
+            <area shape="rect" coords="490,50,690,300" href="delete_properties.html" alt="Delete Properties">
+        </map>
+    </div>
+
+</body>
+</html>

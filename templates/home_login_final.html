@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F3F6F9;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3E6E4E;
+            padding: 20px 50px;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 1.8em;
+            color: #E6F5E6; /* Light green shade to complement the green background */
+        }
+
+        .nav-links a, .action-buttons a {
+            color: #E6F5E6; /* Matching light green */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a:hover {
+            color: #C2D4C4;
+        }
+
+        .centered-buttons {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .centered-buttons a {
+            padding: 15px 40px;
+            background-color: #4A8B4B;
+            border-radius: 5px;
+            color: white;
+            margin: 0 15px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .centered-buttons a:hover {
+            background-color: #2E5735;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/images/Home_bg2.jpg') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            justify-content: flex-end; /* Align the content to the right */
+            align-items: center;
+            color: white;
+            text-align: right; /* Right-align the text */
+            position: relative;
+            padding-right: 150px; /* More padding to move the text to the right */
+        }
+
+        .hero-section h1 {
+            font-size: 3.5em;
+            z-index: 2;
+            margin: 0;
+            line-height: 1.2; /* Reduce line height to bring the lines closer */
+            max-width: 450px; /* Restrict width to force text into two lines */
+        }
+
+        .features-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .features-section h2 {
+            font-size: 2em;
+            color: #3E6E4E;
+            margin-bottom: 40px;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .feature {
+            background-color: #4A8B4B;
+            color: white;
+            width: 30%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Real Estate</h2>
+        <nav>
+            <div class="nav-links">
+                <a href="#">Buy Properties</a>
+                <a href="#">About</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero-section">
+        <h1>Welcome to <br> Your Next Dream Home</h1> <!-- Force two-line break -->
+    </div>
+
+    <!-- Centered login and register buttons -->
+    <div class="centered-buttons">
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    </div>
+
+    <div class="features-section">
+        <h2>Get Home Recommendations</h2>
+        <div class="features-container">
+            <div class="feature">
+                <p>Recommended homes based on your monthly budget</p>
+            </div>
+            <div class="feature">
+                <p>Recommended homes based on your preferred location</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

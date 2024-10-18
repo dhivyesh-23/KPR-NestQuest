@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h2 {
+            margin: 0 0 20px 0;
+            color: #333;
+            text-align: center;
+        }
+        select, input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .property-details {
+            display: none;
+            margin-top: 20px;
+        }
+        .property-fields {
+            margin-top: 20px;
+        }
+        .property-fields div {
+            margin-bottom: 15px;
+        }
+        .success-message {
+            display: none;
+            color: green;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .success-message::before {
+            content: "✓ ";
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Select Property Type</h2>
+        <select id="propertyType" onchange="showPropertyDetails()">
+            <option value="">Select Property Type</option>
+            <option value="Land">Land</option>
+            <option value="Villa">Villa</option>
+            <option value="Apartment">Apartment</option>
+        </select>
+
+        <div class="property-details">
+            <h2>Property Details</h2>
+            <div class="property-fields" id="propertyFields"></div>
+            <button onclick="submitProperty()">Submit</button>
+        </div>
+
+        <div class="success-message" id="successMessage">Property added successfully!</div>
+    </div>
+
+    <script>
+        function showPropertyDetails() {
+            const propertyType = document.getElementById('propertyType').value;
+            const propertyFields = document.getElementById('propertyFields');
+            const detailsContainer = document.querySelector('.property-details');
+           
+            if (propertyType === "") {
+                propertyFields.innerHTML = '';
+                detailsContainer.style.display = 'none';
+                return;
+            }
+
+            propertyFields.innerHTML = '';
+
+            propertyFields.innerHTML += `
+                <div>
+                    <label>Name of the Property</label>
+                    <input type="text" placeholder="Enter property name">
+                </div>
+                <div>
+                    <label>Type of Property</label>
+                    <input type="text" value="${propertyType}" readonly>
+                </div>
+                <div>
+                    <label>Amount</label>
+                    <input type="text" placeholder="Enter amount">
+                </div>
+                <div>
+                    <label>Area (in sq. ft.)</label>
+                    <input type="text" placeholder="Enter area in sq. ft.">
+                </div>
+                <div>
+                    <label>Location</label>
+                    <input type="text" placeholder="Enter location">
+                </div>
+                <div>
+                    <label>Description</label>
+                    <input type="text" placeholder="Enter property description">
+                </div>
+                <div>
+                    <label>Choose Image</label>
+                    <input type="file" accept="image/*">
+                </div>
+            `;
+
+            if (propertyType === "Land") {
+                propertyFields.innerHTML += `
+                    <div>
+                        <label>Plot Size (in cent)</label>
+                        <input type="text" placeholder="Enter plot size">
+                    </div>
+                    <div>
+                        <label>Zoning</label>
+                        <select>
+                            <option value="Residential">Residential</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Agriculture">Agriculture</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Soil Type</label>
+                        <input type="text" placeholder="Enter soil type">
+                    </div>
+                    <div>
+                        <label>Price (amount per cent)</label>
+                        <input type="text" placeholder="Enter price per cent">
+                    </div>
+                `;
+            }
+
+            if (propertyType === "Villa" || propertyType === "Apartment") {
+                propertyFields.innerHTML += `
+                    <div>
+                        <label>BHK (Bedrooms, Hall, Kitchen)</label>
+                        <input type="text" placeholder="Enter BHK configuration">
+                    </div>
+                    <div>
+                        <label>Price</label>
+                        <input type="text" placeholder="Enter price">
+                    </div>
+                `;
+            }
+
+            detailsContainer.style.display = 'block';
+        }
+
+        function submitProperty() {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            // Clear input fields after submission
+            document.getElementById('propertyFields').innerHTML = '';
+            document.querySelector('.property-details').style.display = 'none';
+            document.getElementById('propertyType').value = '';
+        }
+    </script>
+
+</body>
+</html>

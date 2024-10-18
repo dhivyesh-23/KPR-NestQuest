@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            margin: 50px auto;
+            max-width: 1200px; /* Limiting the width for better appearance on large screens */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #2E8B57; /* Darkish green color */
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 40px; /* Increased gap between the blocks */
+            justify-content: center; /* Ensure blocks are properly spaced and centered */
+            margin-bottom: 50px; /* Added margin to space out from the logout button */
+        }
+
+        .box {
+            background-color: #4CAF50;
+            color: white;
+            padding: 40px; /* Increased padding for a larger box */
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Added box shadow for better separation */
+            height: 200px; /* Set a fixed height to make boxes vertically longer */
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        .box img {
+            width: 80px; /* Increased image size */
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .box h2 {
+            margin-bottom: 15px;
+            font-size: 24px; /* Increased font size for headings */
+        }
+
+        .box a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: white;
+            color: #4CAF50;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .box a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* For Logout button */
+        .logout {
+            background-color: red;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .logout:hover {
+            background-color: darkred;
+        }
+
+        /* Adjusting layout for mobile screens */
+        @media (max-width: 600px) {
+            .options {
+                grid-template-columns: 1fr; /* Single column layout for small screens */
+            }
+            .box {
+                padding: 30px; /* Adjusted padding on small screens */
+                height: auto; /* Allow height to adjust on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Your Properties</h1>
+        <div class="options">
+            <div class="box">
+                <h2>Add Property</h2>
+                <img src="{{ url_for('static', filename='images/add_prop.png') }}" alt="add image">
+                <a href="/add_property">Add Property</a>
+            </div>
+            <div class="box">
+                <h2>Edit Property</h2>
+                <img src="{{ url_for('static', filename='images/edit_prop.png') }}" alt="edit image">
+                <a href="/edit_choice">Edit Property</a>
+            </div>
+            <div class="box">
+                <h2>Delete Property</h2>
+                <img src="{{ url_for('static', filename='images/del_prop.png') }}" alt="delete image">
+                <a href="/delete_choice">Delete Property</a>
+            </div>
+            <div class="box">
+                <h2>View Property</h2>
+                <img src="{{ url_for('static', filename='images/view_prop.png') }}" alt="view image">
+                <a href="/properties">View Property</a>
+            </div>
+        </div>
+        <a href="logout.html" class="logout">Logout</a>
+    </div>
+</body>
+</html>

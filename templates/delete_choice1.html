@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Property</title>
+</head>
+<body>
+    <h1>Delete Property</h1>
+    <ul>
+        {% for property in properties %}
+            <li>
+                <h2>{{ property['name'] }}</h2>
+                <p>Location: {{ property['location'] }}</p>
+                <img src="{{ url_for('static', filename='images/' + property['image']) }}" alt="{{ property['name'] }}" style="width:200px; height:auto;">
+                <form action="{{ url_for('delete_property', property_id=property['_id']) }}" method="POST" style="display:inline;">
+                    <button type="submit" style="color: red;">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="/">Back to Choices</a>
+</body>
+</html>
